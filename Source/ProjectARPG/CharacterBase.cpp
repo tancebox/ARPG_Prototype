@@ -91,6 +91,10 @@ void ACharacterBase::OnHealthChanged(float Health, float MaxHealth)
 		bIsDead = true;
 		BP_Die();
 	}
+	else
+	{
+		BP_GetHit();
+	}
 	BP_OnHealthChanged(Health, MaxHealth);
 }
 void ACharacterBase::OnManaChanged(float Mana, float MaxMana)

@@ -60,6 +60,8 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "CharacterBase", meta = (DisplayName = "Die"))
 		void BP_Die();
+	UFUNCTION(BlueprintImplementableEvent, Category = "CharacterBase", meta = (DisplayName = "GetHit"))
+		void BP_GetHit();
 	/*∂§•ÓID*/
 	UFUNCTION(BlueprintCallable, Category = "CharacterBase")
 		bool IsOtherHostile(ACharacterBase* Other);
