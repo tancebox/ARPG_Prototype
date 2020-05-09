@@ -37,6 +37,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AttributeSetBase")
 		FGameplayAttributeData MaxStrength;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AttributeSetBase")
+		float MaxHealthValue=150.0f;
+
 
 	void PostGameplayEffectExecute(const struct FGameplayEffectModCallbackData& Data) override;
 	
@@ -47,5 +50,9 @@ public:
 	//由外部設定角色進場能力
 	UFUNCTION(BlueprintCallable, Category = "AttributeSetBase")
 		void SetActorHealth(float newHealth);
+
+	//由外部設定角色進場能力
+	UFUNCTION(BlueprintCallable, Category = "AttributeSetBase")
+		void UpdateActorAttr();
 
 };

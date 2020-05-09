@@ -8,7 +8,7 @@
 
 
 UAttributeSetBase::UAttributeSetBase()
-	:Health(100.0f),
+	:Health(130.0f),
 	MaxHealth(100.0f),
 	Mana(100.0f),
 	MaxMana(100.0f),
@@ -20,8 +20,16 @@ UAttributeSetBase::UAttributeSetBase()
 
 void UAttributeSetBase::SetActorHealth(float newHealth)
 {
-	MaxHealth.SetBaseValue(newHealth);
+	//MaxHealth.SetBaseValue(newHealth);
 	//UE_LOG(LogTemp, Warning, TEXT("Ouch, I took some damage, now my health is: %f"), MaxHealth.GetCurrentValue());
+}
+
+void UAttributeSetBase::UpdateActorAttr()
+{
+	MaxHealth.SetBaseValue(MaxHealthValue);
+	MaxHealth.SetCurrentValue(MaxHealthValue);
+	Health.SetBaseValue(MaxHealthValue);
+	Health.SetCurrentValue(MaxHealthValue);
 }
 
 //Ability Effect發生的時候檢查是什麼屬性變化，並做處理

@@ -35,7 +35,7 @@ public:
 		UAbilitySystemComponent* AbilitySystemComp;
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const;
 
-	UFUNCTION(BlueprintCallable, Category = "CharacterBase")//登陸技能
+	UFUNCTION(BlueprintCallable, Category = "CharacterBase")//登錄技能
 		void AquireAbility(TSubclassOf<UGameplayAbility> AbilityToAquire);
 	UFUNCTION(BlueprintCallable, Category = "CharacterBase")//登陸技能們
 		void AquireAbilities(TArray<TSubclassOf<UGameplayAbility>> AbilityToAquire);

@@ -31,7 +31,6 @@ void ACharacterBase::BeginPlay()
 	//AttributeSetBaseComp->OnStrengthChange.AddDynamic(this, &ACharacterBase::OnStrengthChanged);
 	AutoDeterminTeamIDbyControllerType();
 	AddGameplayTag(FullHealthTag);
-	
 }
 
 // Called every frame
@@ -91,7 +90,7 @@ void ACharacterBase::OnHealthChanged(float Health, float MaxHealth)
 		bIsDead = true;
 		BP_Die();
 	}
-	else
+	else if(Health > 0.0f)
 	{
 		BP_GetHit();
 	}
@@ -188,6 +187,11 @@ void ACharacterBase::HitStun(float StunDuration)
 	DisableinputControl();
 	GetWorldTimerManager().SetTimer(StunTimeHandle, this, &ACharacterBase::EnableInputControl, StunDuration, false);
 }
+
+/*void ACharacterBase::BP_UpdatePlayerHUD(float Health, float MaxHealth)
+{
+	
+}*/
 
 void ACharacterBase::AddAbilityToUI(TSubclassOf<UGameplayAbilityBase> AbilityToAdd)
 {
